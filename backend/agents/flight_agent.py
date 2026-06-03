@@ -25,7 +25,7 @@ async def flight_agent(source: str, destination: str) -> FlightResult:
     """
 
     response = client.models.generate_content(
-        model="gemini-1.5-flash-latest",
+        model="gemini-2.5-flash",
         contents=prompt
     )
 
