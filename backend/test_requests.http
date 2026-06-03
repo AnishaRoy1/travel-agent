@@ -1,0 +1,13 @@
+### Check server is running
+GET http://localhost:8000/
+
+### Plan a trip
+POST http://localhost:8000/plan-trip
+Content-Type: application/json
+
+{
+  "source": "Bangalore",
+  "destination": "Bali",
+  "days": 5,
+  "budget": 80000
+}
