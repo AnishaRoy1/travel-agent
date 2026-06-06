@@ -8,10 +8,18 @@ from agents.hotel_agent import hotel_agent
 from agents.weather_agent import weather_agent
 from agents.activity_agent import activity_agent
 from agents.budget_agent import budget_agent
+from fastapi.middleware.cors import CORSMiddleware
 
 client = genai.Client(api_key=GEMINI_API_KEY)
 
 app = FastAPI()
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["http://localhost:3000"],
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 
 async def generate_final_itinerary(
