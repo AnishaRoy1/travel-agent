@@ -18,7 +18,8 @@ app.add_middleware(
     CORSMiddleware,
     allow_origins=[
         "http://localhost:3000",
-        "https://your-app.vercel.app"
+        "https://travel-agent-snowy-kappa.vercel.app",
+        "https://travel-agent-prod.up.railway.app"
     ],
     allow_methods=["*"],
     allow_headers=["*"],
