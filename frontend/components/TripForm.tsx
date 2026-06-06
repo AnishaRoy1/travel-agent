@@ -28,7 +28,7 @@ export default function TripForm() {
     setLoading(true);
 
     try {
-      const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/plan-trip`, {
+      const response = await fetch("https://travel-agent-prod.up.railway.app/plan-trip", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
