@@ -14,9 +14,13 @@ class TripResponse(BaseModel):
     destination: str
     days: int
     budget: int
-    itinerary: str
     flight: dict
     hotel: dict
+    weather: dict
+    activities: dict
+    budget_breakdown: dict
+    itinerary: str
+    recommendation: str
 
 
 # --- Agent output models ---
@@ -36,3 +40,26 @@ class HotelResult(BaseModel):
     total_cost: int
     rating: float
     notes: str
+
+class WeatherResult(BaseModel):
+    condition: str
+    average_temp_celsius: float
+    humidity_percent: int
+    travel_tip: str
+
+
+class ActivityResult(BaseModel):
+    day_wise_plan: list[dict]
+    must_see: list[str]
+    estimated_activity_cost: int
+
+
+class BudgetResult(BaseModel):
+    flight_cost: int
+    hotel_cost: int
+    activity_cost: int
+    food_estimate: int
+    total_estimated: int
+    remaining_budget: int
+    is_within_budget: bool
+    recommendation: str
